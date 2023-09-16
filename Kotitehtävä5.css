@@ -1,0 +1,41 @@
+h1:first-letter{
+    text-transform: capitalize;
+    color: darkslategray;
+    font-size: 50px;
+}
+h2:first-letter{
+    text-transform: capitalize;
+    color: darkslategray;
+    font-size: 50px;
+}
+h3:first-letter{
+    text-transform: capitalize;
+    color: darkslategray;
+    font-size: 50px;
+}
+h4:first-letter{
+    text-transform: capitalize;
+    color: darkslategray;
+    font-size: 50px;
+}
+h5:first-letter{
+    text-transform: capitalize;
+    color: darkslategray;
+    font-size: 50px;
+}
+h6:first-letter{
+    text-transform: capitalize;
+    color: darkslategray;
+    font-size: 50px;
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color:deeppink
+}
+
+a.highlight:hover {
+  color: darkslategray;
+  font-size: 30px;
+} 
