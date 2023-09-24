@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ilmoittautumislomake</title>
+</head>
+
+<body>
+    <h1>Kurssille ilmoittautuminen</h1>
+    <form action="https://garagecoders.azurewebsites.net/process" method="post">
+        <label for="nimi">Nimi:</label>
+        <input type="text" id="nimi" name="nimi" required><br><br>
+
+        <label for="vuosikurssi">Vuosikurssi:</label>
+        <input type="password" id="vuosikurssi" name="vuosikurssi" required><br><br>
+
+        <label for="kurssinNimi">Kurssin nimi:</label>
+        <select id="kurssinNimi" name="kurssinNimi">
+            <option value="ohjelmointi">Ohjelmointi</option>
+            <option value="matematiikka">Matematiikka</option>
+            <option value="kieli">Kieli</option>
+        </select><br><br>
+
+        <label for="kurssinTyyppi">Kurssin tyyppi:</label>
+        <select id="kurssinTyyppi" name="kurssinTyyppi">
+            <option value="verkkokurssi">Verkkokurssi</option>
+            <option value="lähiopetus">Lähiopetus</option>
+        </select><br><br>
+
+        <label>Sukupuoli:</label><br>
+        <input type="radio" id="mies" name="sukupuoli" value="mies">
+        <label for="mies">Mies</label><br>
+        <input type="radio" id="nainen" name="sukupuoli" value="nainen">
+        <label for="nainen">Nainen</label><br><br>
+
+        <label>Harrastukset:</label><br>
+        <input type="checkbox" id="hobby1" name="hobby1" value="lukeminen" >
+        <label for="hobby1">Lukeminen</label><br>
+        <input type="checkbox" id="hobby2" name="hobby2" value="liikunta">
+        <label for="hobby2">Liikunta</label><br>
+        <input type="checkbox" id="hobby3" name="hobby3" value="musiikki">
+        <label for="hobby3">Musiikki</label><br>
+        <input type="checkbox" id="hobby4" name="hobby4" value="ruoanlaitto">
+        <label for="hobby4">Ruoanlaitto</label><br><br>
+
+        <input type="submit" value="Lähetä">
+        <input type="reset" value="Tyhjennä">
+    </form>
+</body>
+
+</html>

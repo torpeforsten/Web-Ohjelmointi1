@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ilmoittautumislomake</title>
+</head>
+<body>
+    <h1>Kurssille ilmoittautuminen</h1>
+    <form action="https://garagecoders.azurewebsites.net/process" method="post">
+        <table>
+            <tr>
+                <td><label for="nimi">Nimi:</label></td>
+                <td><input type="text" id="nimi" name="nimi" required></td>
+            </tr>
+            <tr>
+                <td><label for="vuosikurssi">Vuosikurssi:</label></td>
+                <td><input type="password" id="vuosikurssi" name="vuosikurssi" required></td>
+            </tr>
+            <tr>
+                <td><label for="kurssinNimi">Kurssin nimi:</label></td>
+                <td>
+                    <select id="kurssinNimi" name="kurssinNimi" multiple>
+                        <optgroup label="Ohjelmointi">
+                            <option value="java">Java</option>
+                            <option value="python">Python</option>
+                        </optgroup>
+                        <optgroup label="Matematiikka">
+                            <option value="algebra">Algebra</option>
+                            <option value="geometria">Geometria</option>
+                        </optgroup>
+                        <optgroup label="Kieli">
+                            <option value="englanti">Englanti</option>
+                            <option value="ranska">Ranska</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="kurssinTyyppi">Kurssin tyyppi:</label></td>
+                <td>
+                    <select id="kurssinTyyppi" name="kurssinTyyppi">
+                        <option value="verkkokurssi">Verkkokurssi</option>
+                        <option value="lähiopetus">Lähiopetus</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Sukupuoli:</td>
+                <td>
+                    <input type="radio" id="mies" name="sukupuoli" value="mies">
+                    <label for="mies">Mies</label><br>
+                    <input type="radio" id="nainen" name="sukupuoli" value="nainen">
+                    <label for="nainen">Nainen</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Harrastukset:</td>
+                <td>
+                    <input type="checkbox" id="hobby1" name="hobby1" value="lukeminen">
+                    <label for="hobby1">Lukeminen</label><br>
+                    <input type="checkbox" id="hobby2" name="hobby2" value="liikunta">
+                    <label for="hobby2">Liikunta</label><br>
+                    <input type="checkbox" id="hobby3" name="hobby3" value="musiikki">
+                    <label for="hobby3">Musiikki</label><br>
+                    <input type="checkbox" id="hobby4" name="hobby4" value="ruoanlaitto">
+                    <label for="hobby4">Ruoanlaitto</label>
+                </td>
+            </tr>
+            <tr style="display:none;">
+                <td><label for="oppilaitos">Oppilaitos:</label></td>
+                <td><input type="text" id="oppilaitos" name="oppilaitos" value="Savonia AMK" readonly></td>
+            </tr>
+        </table>
+        
+        <input type="submit" value="Lähetä">
+        <input type="reset" value="Tyhjennä">
+    </form>
+</body>
+</html>
