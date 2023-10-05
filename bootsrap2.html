@@ -64,9 +64,34 @@
                         <input type="checkbox">Remember me
                     </label>
                 </div>
-                <button class="btn btn-primary" type="button" id="checkButton">Check</button>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#myModal">Check</button>
             </form>
         </div>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Validating data</h4>
+                  <button type="button" class="btn-close" data-bs-toggle="modal"></button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                  Check that all data is valid
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal">Save</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+          
         <div class="col">
             <table class="table">
                 <thead>
