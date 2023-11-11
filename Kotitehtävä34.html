@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Display</title>
+  <style>
+    article {
+      display: none;
+      transition: opacity 2s;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('a').click(function (event) {
+        event.preventDefault();
+        var target = $(this).attr('href');
+        $('article').fadeOut(2000);
+        $(target).fadeIn(2000);
+        setTimeout(function () {
+          $(target).fadeOut(2000);
+        }, 3000);
+      });
+    });
+  </script>
+</head>
+<body>
+  <a href="#article1">Linkki 1</a>
+  <a href="#article2">Linkki 2</a>
+  <a href="#article3">Linkki 3</a>
+
+  <article id="article1">
+    <p>Toimiikohan tämä</p>
+  </article>
+
+  <article id="article2">
+    <p>Oho wau mitenkäs tämä</p>
+  </article>
+
+  <article id="article3">
+    <p>Taittaapi toimia!</p>
+  </article>
+</body>
+</html>
