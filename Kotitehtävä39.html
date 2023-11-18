@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekisteröityminen</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+    #lisatiedot {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="rekisterointi-dialogi" title="Rekisteröityminen">
+  <p id="virheviesti" style="color: red;"></p>
+  <form id="rekisterointi-lomake">
+    <label for="nimi">Nimi:</label>
+    <input type="text" id="nimi" name="nimi" required minlength="5">
+    <br>
+    <label for="tunnus">Tunnus:</label>
+    <input type="text" id="tunnus" name="tunnus" required minlength="5">
+    <br>
+    <input type="checkbox" id="lisatietojaCheckbox"> Lisätietoja
+    <div id="lisatiedot">
+      <label for="oppilaitos">Oppilaitos:</label>
+      <input type="text" id="oppilaitos" name="oppilaitos" disabled>
+      <br>
+      <label for="ika">Ikä:</label>
+      <input type="text" id="ika" name="ika" disabled>
+    </div>
+  </form>
+</div>
+
+<p id="kayttajatiedot" style="display: none;"></p>
+<button id="rekisteroidyNappi">Rekisteröidy</button>
+
+<script>
+  $(document).ready(function() {
+    $("#rekisteroidyNappi").on("click", function() {
+      avaaRekisterointiDialogi();
+    });
+
+    $("#rekisterointi-dialogi").dialog({
+      autoOpen: false,
+      modal: true,
+      buttons: {
+        "Save": function() {
+          if (tarkistaTiedot()) {
+            suljeDialogi();
+          }
+        },
+        "Peruuta": function() {
+          suljeDialogi();
+        }
+      }
+    });
+
+    $("#lisatietojaCheckbox").on("change", function() {
+      $("#lisatiedot input").prop("disabled", !this.checked);
+    });
+
+    function avaaRekisterointiDialogi() {
+      $("#rekisterointi-dialogi").dialog("open");
+      nollaaLomake();
+    }
+
+    function suljeDialogi() {
+      $("#rekisterointi-dialogi").dialog("close");
+      naytaKayttajatiedot();
+    }
+
+    function nollaaLomake() {
+      $("#rekisterointi-lomake")[0].reset();
+      $("#lisatietojaCheckbox").prop("checked", false);
+      $("#lisatiedot input").prop("disabled", true);
+    }
+
+    function tarkistaTiedot() {
+      var nimi = $("#nimi").val();
+      var tunnus = $("#tunnus").val();
+      var virheviesti = $("#virheviesti");
+
+      if (nimi.length >= 5 && tunnus.length >= 5) {
+        virheviesti.text("");
+        return true;
+      } else {
+        virheviesti.text("Nimi ja tunnus tulee olla vähintään 5 merkkiä pitkiä.");
+        return false;
+      }
+    }
+
+    function naytaKayttajatiedot() {
+      var nimi = $("#nimi").val();
+      var tunnus = $("#tunnus").val();
+      var oppilaitos = $("#oppilaitos").val();
+      var ika = $("#ika").val();
+
+      var kayttajatiedot = "Nimi: " + nimi + "<br>Tunnus: " + tunnus;
+
+      if ($("#lisatietojaCheckbox").prop("checked")) {
+        kayttajatiedot += "<br>Oppilaitos: " + oppilaitos + "<br>Ikä: " + ika;
+      }
+
+      $("#kayttajatiedot").html(kayttajatiedot).show();
+    }
+  });
+</script>
+
+</body>
+</html>
