@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: left;
+    /* Align content to the left */
+}
+
+.response-container {
+    margin-top: 20px;
+}
+
+.avatar-img {
+    border-radius: 50%;
+    width: 40px;
+    /* Adjust the size as needed */
+    height: 40px;
+    object-fit: cover;
+}
+
+.btn-info,
+.btn-danger {
+    width: 60px;
+    /* Adjust the size as needed */
+}
